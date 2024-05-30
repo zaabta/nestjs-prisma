@@ -60,6 +60,9 @@ $ pnpm run test:cov
 
 ## Support
 
+## api documentation
+- link - [getpostman documentation](https://documenter.getpostman.com/view/30480733/2sA3QtfXRH)
+
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
 ## Stay in touch
