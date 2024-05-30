@@ -1,4 +1,4 @@
-import { ProductSeed } from './product.seed';
+import { ProductSeed } from './seed.product';
 import { DatabaseService } from '../../src/database/database.service';
 
 export class Main {

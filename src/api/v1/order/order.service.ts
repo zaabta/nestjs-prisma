@@ -2,7 +2,6 @@ import { Injectable, BadRequestException } from '@nestjs/common';
 import { CreateOrderDto, FilterOrderDto, UpdateOrderDto } from './order.dto';
 import { DatabaseService } from '../../../database/database.service';
 import { Product } from '../product/product.types';
-import { productSelect } from '../product/product.helper';
 import { calOrderTotal, orderInclude, orderSelect } from './order.helper';
 import { OrderStatus } from './order.helper';
 
@@ -58,7 +57,7 @@ export class OrderService {
     });
   }
 
-  async updateOrder(updateOrderDto: UpdateOrderDto) {
+  async updateOrderStatus(updateOrderDto: UpdateOrderDto) {
     const { orderId: id, status } = updateOrderDto;
     const updatedOrder = await this.db.order.update({
       where: {

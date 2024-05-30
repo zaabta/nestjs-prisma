@@ -32,7 +32,7 @@ export class OrderController {
   @Patch('/update-status')
   @HttpCode(HttpStatus.OK)
   updateOrder(@Body() updateOrderDto: UpdateOrderDto) {
-    return this.orderService.updateOrder(updateOrderDto);
+    return this.orderService.updateOrderStatus(updateOrderDto);
   }
 
   @Get()

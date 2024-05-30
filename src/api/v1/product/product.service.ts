@@ -4,13 +4,12 @@ import { GetProductDto, ListProductDto } from './product.dto';
 import { Prisma } from '@prisma/client';
 import { createFilter, createRangeFilter } from 'src/utils';
 import { productSelect } from './product.helper';
-import { limits } from 'argon2';
 
 @Injectable()
 export class ProductService {
   constructor(private readonly db: DatabaseService) {}
 
-  async getAllProducts(listProductDto: ListProductDto) {
+  async listProducts(listProductDto: ListProductDto) {
     const { limit: take, page, ...filter } = listProductDto;
     const where: Prisma.ProductWhereInput = {
       deletedAt: null,

@@ -12,7 +12,7 @@ export class ProductController {
   @Get()
   getAllProducts(@Query() listProductDto: ListProductDto) {
     const { limit, page, min_price, max_price } = listProductDto;
-    return this.productService.getAllProducts({
+    return this.productService.listProducts({
       ...listProductDto,
       limit: Number(limit) || 5,
       page: Number(page) || 1,

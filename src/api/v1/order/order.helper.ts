@@ -1,7 +1,6 @@
 import { type Prisma } from "@prisma/client";
 import { Product } from "../product/product.types";
 import { productInclude, productSelect } from "../product/product.helper";
-import { userSelect } from "../auth/auth.helper";
 
 export enum OrderStatus {
   NEW = 'NEW',

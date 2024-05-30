@@ -16,14 +16,8 @@ export class AuthService {
     const { password, ...rest } = input;
     const hash = await argon2.hash(password);
     const user = await this.db.user
-      .upsert({
-        where: {
-          email: rest.email,
-        },
-        update: {
-          deletedAt: null,
-        },
-        create: {
+      .create({
+        data: {
           ...rest,
           password: hash,
         },
