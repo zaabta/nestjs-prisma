@@ -1,0 +1,535 @@
+{
+	"info": {
+		"_postman_id": "506cc2b3-22ad-4772-813e-2db4e8683e51",
+		"name": "nestjs-prisma",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30480733"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"ali\",\n    \"surname\": \"almanea\",\n    \"email\": \"alialmanea@gmail.com\",\n    \"password\": \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/auth/register"
+					},
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"ali\",\n    \"surname\": \"almanea\",\n    \"email\": \"alialmanea@gmail.com\",\n    \"password\": \"12345\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/api/v1/auth/register"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "84"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"54-Qzx6Hba8WVvMIqKHMaW8bRUEVLw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 May 2024 00:11:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"name\": \"ali\",\n    \"surname\": \"almanea\",\n    \"email\": \"alialmanea@gmail.com\",\n    \"orders\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "logIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"ali@gmail.com\",\n    \"password\": \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/auth/login"
+					},
+					"response": [
+						{
+							"name": "logIn",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"ali@gmail.com\",\n    \"password\": \"12345\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/api/v1/auth/login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "298"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12a-X+n2UtyWQxx279IQxEvxvj0wXmo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 May 2024 00:12:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"ali\",\n        \"surname\": \"almanea\",\n        \"email\": \"ali@gmail.com\"\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFsaSIsInN1cm5hbWUiOiJhbG1hbmVhIiwiZW1haWwiOiJhbGlAZ21haWwuY29tIiwiaWF0IjoxNzE3MDI3OTU3LCJleHAiOjE3MTcwMzE1NTd9.zt56aXoSzwgUZ-qFKQzirqdbKPI9DvJz1kkpS8I02m8\"\n}"
+						}
+					]
+				},
+				{
+					"name": "profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFsaSIsInN1cm5hbWUiOiJhbG1hbmVhIiwiZW1haWwiOiJhbGlAZ21haWwuY29tIiwiaWF0IjoxNzE3MDI1MzEyLCJleHAiOjE3MTcwMjg5MTJ9.GIM8WyQUXuV3Ye0Udx5Ac_FkhDQMMpwBGE6y4rC_24c"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/v1/auth"
+					},
+					"response": [
+						{
+							"name": "profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8080/api/v1/auth"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1672"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"688-7H8venjQbUiu8g3yxqoZKg8j4QQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 May 2024 00:13:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"ali\",\n    \"surname\": \"almanea\",\n    \"email\": \"ali@gmail.com\",\n    \"orders\": [\n        {\n            \"id\": 3,\n            \"total\": \"112.98\",\n            \"status\": \"NEW\",\n            \"createdAt\": \"2024-05-29T23:54:19.643Z\",\n            \"updatedAt\": \"2024-05-29T23:54:19.643Z\",\n            \"orderItems\": [\n                {\n                    \"product\": {\n                        \"id\": 3,\n                        \"name\": \"Mens Cotton Jacket\",\n                        \"price\": \"55.99\",\n                        \"stock\": 500,\n                        \"description\": \"great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.\",\n                        \"createdAt\": \"2024-05-29T23:28:02.534Z\",\n                        \"updatedAt\": \"2024-05-29T23:28:02.534Z\"\n                    }\n                },\n                {\n                    \"product\": {\n                        \"id\": 15,\n                        \"name\": \"BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats\",\n                        \"price\": \"56.99\",\n                        \"stock\": 235,\n                        \"description\": \"Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates\",\n                        \"createdAt\": \"2024-05-29T23:28:02.538Z\",\n                        \"updatedAt\": \"2024-05-29T23:28:02.538Z\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFsaSIsInN1cm5hbWUiOiJhbG1hbmVhIiwiZW1haWwiOiJhbGlAZ21haWwuY29tIiwiaWF0IjoxNzE2OTI4MjgxLCJleHAiOjE3MTY5MzE4ODF9.ib7VHVFQa-ln6ZB2uJpQGA8_KjQTVu6ya9tdE38RTiQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/v1/auth/logout"
+					},
+					"response": [
+						{
+							"name": "logout",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8080/api/v1/auth/logout"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4-X/5TO4MPCKAyY0ipFgr6/IraRNs\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 May 2024 00:14:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/product?limit=5&page=1&min_price=50&max_price=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"product"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "min_price",
+									"value": "50"
+								},
+								{
+									"key": "max_price",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/product?limit=5&page=1&min_price=50&max_price=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"product"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "5"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "min_price",
+											"value": "50"
+										},
+										{
+											"key": "max_price",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2003"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7d3-8WqFDIaFISg6LVz8iCQsdJbdTq0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 May 2024 00:15:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"Mens Cotton Jacket\",\n            \"price\": \"55.99\",\n            \"stock\": 500,\n            \"description\": \"great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.\",\n            \"createdAt\": \"2024-05-29T23:28:02.534Z\",\n            \"updatedAt\": \"2024-05-29T23:28:02.534Z\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"WD 2TB Elements Portable External Hard Drive - USB 3.0 \",\n            \"price\": \"64\",\n            \"stock\": 203,\n            \"description\": \"USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system\",\n            \"createdAt\": \"2024-05-29T23:28:02.541Z\",\n            \"updatedAt\": \"2024-05-29T23:28:02.541Z\"\n        },\n        {\n            \"id\": 15,\n            \"name\": \"BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats\",\n            \"price\": \"56.99\",\n            \"stock\": 235,\n            \"description\": \"Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates\",\n            \"createdAt\": \"2024-05-29T23:28:02.538Z\",\n            \"updatedAt\": \"2024-05-29T23:28:02.538Z\"\n        }\n    ],\n    \"meta\": {\n        \"total\": 3,\n        \"totalPageCount\": 1,\n        \"currentPage\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "single product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/v1/product/2"
+					},
+					"response": [
+						{
+							"name": "single product",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8080/api/v1/product/2"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "343"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"157-55V8Pn3KX0XyM+sXoy4wav+eUWY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 May 2024 00:15:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops\",\n    \"description\": \"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday\",\n    \"price\": \"109.95\",\n    \"stock\": 120,\n    \"createdAt\": \"2024-05-29T23:28:02.534Z\",\n    \"updatedAt\": \"2024-05-29T23:28:02.534Z\",\n    \"deletedAt\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "create order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFsaSIsInN1cm5hbWUiOiJhbG1hbmVhIiwiZW1haWwiOiJhbGlAZ21haWwuY29tIiwiaWF0IjoxNzE3MDI1MzEyLCJleHAiOjE3MTcwMjg5MTJ9.GIM8WyQUXuV3Ye0Udx5Ac_FkhDQMMpwBGE6y4rC_24c"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productIds\":[\"3\", \"15\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/v1/order"
+					},
+					"response": [
+						{
+							"name": "create order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productIds\":[\"3\", \"15\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/api/v1/order"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "422"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a6-kBvXXALYtVwxQSolz0cxPs2FHks\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 May 2024 00:15:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"userId\": 1,\n    \"total\": \"112.98\",\n    \"status\": \"NEW\",\n    \"createdAt\": \"2024-05-30T00:15:45.066Z\",\n    \"updatedAt\": \"2024-05-30T00:15:45.066Z\",\n    \"deletedAt\": null,\n    \"orderItems\": [\n        {\n            \"id\": 7,\n            \"orderId\": 4,\n            \"productId\": 3,\n            \"createdAt\": \"2024-05-30T00:15:45.066Z\",\n            \"updatedAt\": \"2024-05-30T00:15:45.066Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": 8,\n            \"orderId\": 4,\n            \"productId\": 15,\n            \"createdAt\": \"2024-05-30T00:15:45.066Z\",\n            \"updatedAt\": \"2024-05-30T00:15:45.066Z\",\n            \"deletedAt\": null\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
